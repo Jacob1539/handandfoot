@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hand & Foot Scoring</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Hand & Foot Scoring</h1>
+		<p>Reloading this page will reset the score</p>
+	</header>
+	<section class="contain">
+			<section class="type-a">
+				<form>
+					<input type ="text" name="t1name" placeholder="Team One Name">
+				</form>
+				<h2 id="ans1"></h2>
+			</section>
+			<section class="type-b">
+				<form>
+					<input type ="text" name="t1name" placeholder="Team Two Name">
+				</form>
+				<h2 id="ans2"></h2>
+		</section>
+	</section>
+	<section class="contain2">
+			<section class="type-a">
+				<form><label>Points from Previous Rounds</label>
+				<input type ="number" id="pre1" placeholder="Type the Number Above"></form>
+				<form><label>100 Point Bonus</label>
+				<input type ="number" id="n1" placeholder="Ex. 100"></form>
+				<form><label>Number Of Red Canastas</label>
+				<input type="number" id="n2" placeholder="Ex. 2"></form>
+				<form><label>Number Of Black Canastas & Red 3s</label>
+				<input type="number" id="n9" placeholder="Ex. 5"></form>
+				<form><label>Card Values</label>
+				<input type="number" id="n3" placeholder="Ex. 950"></form>
+				<form><label>Negative (if needed)</label>
+				<input type="number" id="n4" placeholder="Ex. 220"></form>
+				<br>
+				<div class="central">
+				<input type="button" class="type-d" value="Done" onclick="add1()">
+				</div>
+				<script>
+				function add1()
+				{
+					var pre1=document.getElementById("pre1").value;
+					var n1=document.getElementById("n1").value;
+					var n2=document.getElementById("n2").value;
+					var n3=document.getElementById("n3").value;
+					var n4=document.getElementById("n4").value;
+					var n9=document.getElementById("n9").value;
+					var p1=parseFloat(pre1);
+					var c1=parseFloat(n1);
+					var c2=parseFloat(n2);
+					var c3=parseFloat(n3);
+					var c4=parseFloat(n4);
+					var c9=parseFloat(n9);
+					if (isNaN(p1)) {
+						var p1=0
+					}
+					if (isNaN(c1)) {
+						var c1=0
+					}
+					if (isNaN(c2)) {
+						var c2=0
+					}
+					if (isNaN(c3)) {
+						var c3=0
+					}
+					if (isNaN(c4)) {
+						var c4=0
+					}
+					if (isNaN(c9)) {
+						var c9=0
+					}
+					var t1=p1+c1+(500*c2)+(300*c9)+c3-c4;
+					document.getElementById("ans1").innerHTML=t1;
+				}
+				</script>	
+			</section>
+			<section class="type-b">
+				<form><label>Points from Previous Rounds</label>
+				<input type ="number" id="pre2" placeholder="Type the Number Above"></form>
+				<form><label>100 Point Bonus</label>
+				<input type ="number" id="n5" placeholder="Ex. 100"></form>
+				<form><label>Number Of Red Canastas</label>
+				<input type="number" id="n6" placeholder="Ex. 2"></form>
+				<form><label>Number Of Black Canastas & Red 3s</label>
+				<input type="number" id="n10" placeholder="Ex. 5"></form>
+				<form><label>Card Values</label>
+				<input type="number" id="n7" placeholder="Ex. 950"></form>
+				<form><label>Negative (if needed)</label>
+				<input type="number" id="n8" placeholder="Ex. 220"></form>
+				<br>
+				<div class="central">
+				<input type="button" class="type-d" value="Done" onclick="add2()">
+				</div>
+				<script>
+				function add2()
+				{
+					var pre2=document.getElementById("pre2").value;
+					var n5=document.getElementById("n5").value;
+					var n6=document.getElementById("n6").value;
+					var n7=document.getElementById("n7").value;
+					var n8=document.getElementById("n8").value;
+					var n10=document.getElementById("n10").value;
+					var p2=parseFloat(pre2);
+					var c5=parseFloat(n5);
+					var c6=parseFloat(n6);
+					var c7=parseFloat(n7);
+					var c8=parseFloat(n8);
+					var c10=parseFloat(n10);
+					if (isNaN(p2)) {
+						var p2=0
+					}
+					if (isNaN(c5)) {
+						var c5=0
+					}
+					if (isNaN(c6)) {
+						var c6=0
+					}
+					if (isNaN(c7)) {
+						var c7=0
+					}
+					if (isNaN(c8)) {
+						var c8=0
+					}
+					if (isNaN(c10)) {
+						var c10=0
+					}
+					var t2=p2+c5+(500*c6)+(300*c10)+c7-c8;
+					document.getElementById("ans2").innerHTML=t2;
+				}
+				</script>	
+			</section>
+	</section>
+	<footer>
+		<h6>Hand & Foot Score Calculator version 1.0</h6>
+	</footer>
+</body>
+</html>
