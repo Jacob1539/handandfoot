@@ -27,24 +27,31 @@
 	<section class="contain2">
 			<section class="type-a">
 				<form><label>Points from Previous Rounds</label>
-				<input type ="number" id="pre1" placeholder="Type the Number Above"></form>
-				<form><label>100 Point Bonus</label>
-				<input type ="number" id="n1" placeholder="Ex. 100"></form>
-				<form><label>Number Of Red Canastas</label>
-				<input type="number" id="n2" placeholder="Ex. 2"></form>
-				<form><label>Number Of Black Canastas & Red 3s</label>
-				<input type="number" id="n9" placeholder="Ex. 5"></form>
-				<form><label>Card Values</label>
-				<input type="number" id="n3" placeholder="Ex. 950"></form>
-				<form><label>Negative (if needed)</label>
-				<input type="number" id="n4" placeholder="Ex. 220"></form>
+				<input type ="number" id="pre1" placeholder="Type the Number Above">
+				<br>
+				<label>100 Point Bonus</label>
+				<input type ="number" id="n1" placeholder="Ex. 100">
+				<br>
+				<label>Number Of Red Canastas</label>
+				<input type="number" id="n2" placeholder="Ex. 2">
+				<br>
+				<label>Number Of Black Canastas & Red 3s</label>
+				<input type="number" id="n9" placeholder="Ex. 5">
+				<br>
+				<label>Card Values</label>
+				<input type="number" id="n3" placeholder="Ex. 950">
+				<br>
+				<label>Negative (if needed)</label>
+				<input type="number" id="n4" placeholder="Ex. 220">
+				<br>
 				<br>
 				<div class="central">
 				<input type="button" class="type-d" value="Done" onclick="add1()">
-				</div>
+				<input type="reset" value="Clear" class="type-d">
+				</form></div>
 				<script>
 				function add1()
-				{
+				{ 
 					var pre1=document.getElementById("pre1").value;
 					var n1=document.getElementById("n1").value;
 					var n2=document.getElementById("n2").value;
@@ -82,21 +89,27 @@
 			</section>
 			<section class="type-b">
 				<form><label>Points from Previous Rounds</label>
-				<input type ="number" id="pre2" placeholder="Type the Number Above"></form>
-				<form><label>100 Point Bonus</label>
-				<input type ="number" id="n5" placeholder="Ex. 100"></form>
-				<form><label>Number Of Red Canastas</label>
-				<input type="number" id="n6" placeholder="Ex. 2"></form>
-				<form><label>Number Of Black Canastas & Red 3s</label>
-				<input type="number" id="n10" placeholder="Ex. 5"></form>
-				<form><label>Card Values</label>
-				<input type="number" id="n7" placeholder="Ex. 950"></form>
-				<form><label>Negative (if needed)</label>
-				<input type="number" id="n8" placeholder="Ex. 220"></form>
+				<input type ="number" id="pre2" placeholder="Type the Number Above">
+				<br>
+				<label>100 Point Bonus</label>
+				<input type ="number" id="n5" placeholder="Ex. 100">
+				<br>
+				<label>Number Of Red Canastas</label>
+				<input type="number" id="n6" placeholder="Ex. 2">
+				<br>
+				<label>Number Of Black Canastas & Red 3s</label>
+				<input type="number" id="n10" placeholder="Ex. 5">
+				<br>
+				<label>Card Values</label>
+				<input type="number" id="n7" placeholder="Ex. 950">
+				<br>
+				<label>Negative (if needed)</label>
+				<input type="number" id="n8" placeholder="Ex. 220">
 				<br>
 				<div class="central">
 				<input type="button" class="type-d" value="Done" onclick="add2()">
-				</div>
+				<input type="reset" value="Clear" class="type-d">
+				</form></div>
 				<script>
 				function add2()
 				{
@@ -137,7 +150,7 @@
 			</section>
 	</section>
 	<footer>
-		<h6>Hand & Foot Score Calculator version 1.0</h6>
+		<h6>Hand & Foot Score Calculator version 1.1</h6>
 	</footer>
 </body>
 </html>
