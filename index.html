@@ -1,29 +1,35 @@
 <!DOCTYPE html>
-<!--hand and foot scoresheet V1.3-->
+<!--hand and foot scoresheet V1.4-->
 <html>
 <head>
-	<title>Hand & Foot Scoring</title>
+	<title>Hand & Foot Scorecard</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="icon.png">
 	<body onLoad="done()">
 </head>
 <body>
 	<header>
+		<ul class="unavbar">
+			<li class="navbar"><a href="index.html" class="active">Scorecard</a></li>
+			<li class="navbar"><a href="scoring.html">Scoring Rules</a></li>
+			<li class="navbar" style="float:right"><a href="about.html">About</a></li>
+		</ul>
 		<h1>Hand & Foot Scoring</h1>
 		<p>Reloading this page will reset the score</p>
 	</header>
 	<section class="contain">
 			<section class="type-a">
 				<form>
-					<input type ="text" name="t1name" placeholder="Team One Name">
+					<input type ="text" name="t1name" placeholder="Team One Name" class="tname1">
 				</form>
-				<h2 id="ans1"></h2>
+				<h2 id="ans1" class="ans1"></h2>
 			</section>
 			<section class="type-b">
 				<form>
-					<input type ="text" name="t1name" placeholder="Team Two Name">
+					<input type ="text" name="t1name" placeholder="Team Two Name" class="tname2">
 				</form>
-				<h2 id="ans2"></h2>
+				<h2 id="ans2" class="ans2"></h2>
 				<script>
 					function done() {
 						document.getElementById("done1").click();
@@ -35,27 +41,34 @@
 	<section class="contain2">
 			<section class="type-a">
 				<form>
-				<label>Bonus</label>
-				<label>&emsp;0</label><input type ="radio" id="n1a" name ="n1d" value="0" onclick="n1val(0)">
-				<label>&emsp;100</label><input type ="radio" id="n1b" name ="n1d" value="100" onclick="n1val(100)">
-				<label>&emsp;200</label><input type ="radio" id="n1c" name ="n1d" value="200" onclick="n1val(200)">
-				<br>
-				<label>Number Of Red Canastas</label>
-				<input type="number" id="n2" placeholder="Ex. 2">
-				<br>
-				<label>Number Of Black Canastas & Red 3s</label>
-				<input type="number" id="n9" placeholder="Ex. 5">
-				<br>
-				<label>Card Values</label>
-				<input type="number" id="n3" placeholder="Ex. 950">
-				<br>
-				<label>Negative (if needed)</label>
-				<input type="number" id="n4" placeholder="Ex. 220">
-				<br>
+					<table>
+						<tr>
+							<td><label class="resp1">Bonus</label></td>
+							<td><label class="resp1">&emsp;0</label><input type ="radio" id="n1a" name ="n1d" value="0" onclick="n1val(0)">
+								<label class="resp1">&emsp;100</label><input type ="radio" id="n1b" name ="n1d" value="100" onclick="n1val(100)">
+								<label class="resp1">&emsp;200</label><input type ="radio" id="n1c" name ="n1d" value="200" onclick="n1val(200)"></td>
+						</tr>
+						<tr>
+							<td><label class="resp1">Number Of Red Canastas</label></td>
+							<td><input type="number" id="n2" class="resp1f"></td>
+						</tr>
+						<tr>
+							<td><label class="resp1">Number Of Black Canastas & Red 3s</label></td>
+							<td><input type="number" id="n9" class="resp1f"></td>
+						</tr>
+						<tr>
+							<td><label class="resp1">Card Values</label></td>
+							<td><input type="number" id="n3" class="resp1f"></td>
+						</tr>
+						<tr>
+							<td><label class="resp1">Negative (if needed)</label></td>
+							<td><input type="number" id="n4" class="resp1f"></td>
+						</tr>
+					</table>
 				<br>
 				<div class="central">
-				<input type="button" class="type-d" value="Done" onclick="add1()" id="done1">
-				<input type="reset" value="Clear" class="type-d" id="reset1">
+				<input type="button" class="type-dleft" value="Done" onclick="add1()" id="done1">
+				<input type="reset" value="Clear" class="type-dleft" id="reset1">
 				<input type="hidden" id="pre1" value="0">
 				<input type="hidden" id="n1" value="0">
 				</form></div>
@@ -65,6 +78,7 @@
 					}
 					function add1()
 					{ 
+						//VALIDATION
 						var pre1=document.getElementById("pre1").value;
 						var n1=document.getElementById("n1").value;
 						var n2=document.getElementById("n2").value;
@@ -95,6 +109,18 @@
 						if (isNaN(c9)) {
 							var c9=0
 						}
+						if (c2>100 || c9>100) {
+							alert("For the number of canastas and red threes, please enter the number of canastas and/or threes, not the point value.  For example, for three black canastas and a red three, enter 4 instead of 1200.");
+							return;
+						}
+						if (c1<0 ||c2<0 ||c3<0 ||c9<0) {
+						alert("Only the negative field may contain a negative number.");
+						return;
+						}
+						if(c4<0) {
+							c4*=-1;
+						}
+						//CALCULATION
 						var t1=p1+c1+(500*c2)+(300*c9)+c3-c4;
 						document.getElementById("pre1").setAttribute('value',t1);
 						document.getElementById("ans1").innerHTML=t1;
@@ -105,27 +131,34 @@
 			</section>
 			<section class="type-b">
 				<form>
-				<label>Bonus</label>
-				<label>&emsp;0</label><input type ="radio" id="n5a" name ="n5d" value="0" onclick="n5val(0)">
-				<label>&emsp;100</label><input type ="radio" id="n5b" name ="n5d" value="100" onclick="n5val(100)">
-				<label>&emsp;200</label><input type ="radio" id="n5c" name ="n5d" value="200" onclick="n5val(200)">
-				<br>
-				<label>Number Of Red Canastas</label>
-				<input type="number" id="n6" placeholder="Ex. 2">
-				<br>
-				<label>Number Of Black Canastas & Red 3s</label>
-				<input type="number" id="n10" placeholder="Ex. 5">
-				<br>
-				<label>Card Values</label>
-				<input type="number" id="n7" placeholder="Ex. 950">
-				<br>
-				<label>Negative (if needed)</label>
-				<input type="number" id="n8" placeholder="Ex. 220">
-				<br>
+					<table>
+						<tr>
+							<td><label class="resp2">Bonus</label></td>
+							<td><label class="resp2">&emsp;0</label><input type ="radio" id="n5a" name ="n5d" value="0" onclick="n5val(0)">
+								<label class="resp2">&emsp;100</label><input type ="radio" id="n5b" name ="n5d" value="100" onclick="n5val(100)">
+								<label class="resp2">&emsp;200</label><input type ="radio" id="n5c" name ="n5d" value="200" onclick="n5val(200)"></td>
+						</tr>
+						<tr>
+							<td><label class="resp2">Number Of Red Canastas</label></td>
+							<td><input type="number" id="n6" class="resp2f"></td>
+						</tr>
+						<tr>
+							<td><label class="resp2">Number Of Black Canastas & Red 3s</label></td>
+							<td><input type="number" id="n10" class="resp2f"></td>
+						</tr>
+						<tr>
+							<td><label class="resp2">Card Values</label></td>
+							<td><input type="number" id="n7" class="resp2f"></td>
+						</tr>
+						<tr>
+							<td><label class="resp2">Negative (if needed)</label></td>
+							<td><input type="number" id="n8" class="resp2f"></td>
+						</tr>
+					</table>
 				<div class="central">
 				<br>
-				<input type="button" class="type-d" value="Done" onclick="add2()" id="done2">
-				<input type="reset" value="Clear" class="type-d" id="reset2">
+				<input type="button" class="type-dright" value="Done" onclick="add2()" id="done2">
+				<input type="reset" value="Clear" class="type-dright" id="reset2">
 				<input type="hidden" id="pre2" value="0" id="reset2">
 				<input type="hidden" id="n5" value="0">
 				</form></div>
@@ -135,6 +168,7 @@
 					}
 				function add2()
 				{
+					//VALIDATION
 					var pre2=document.getElementById("pre2").value;
 					var n5=document.getElementById("n5").value;
 					var n6=document.getElementById("n6").value;
@@ -165,6 +199,18 @@
 					if (isNaN(c10)) {
 						var c10=0
 					}
+					if (c6>100 || c10>100) {
+						alert("For the number of canastas and red threes, please enter the number of canastas and/or threes, not the point value.  For example, for three black canastas and a red three, enter 4 instead of 1200.");
+						return;
+					}
+					if (c5<0 ||c6<0 ||c7<0 ||c10<0) {
+						alert("Only the negative field may contain a negative number.");
+						return;
+					}
+					if(c8<0) {
+						c8*=-1;
+					}
+					//CALCULATION
 					var t2=p2+c5+(500*c6)+(300*c10)+c7-c8;
 					document.getElementById("pre2").setAttribute('value',t2);
 					document.getElementById("ans2").innerHTML=t2;
@@ -175,8 +221,8 @@
 			</section>
 	</section>
 	<footer>
-		<h6>Hand & Foot Score Calculator Version 1.3</h6>
-		<!---New in 1.3: Fixed a bug where clicking done for team 2 did not clear entries, the number zero is displayed upon start, 100 point bonus is now a selection rather than a free response-->
+		<h6>Hand & Foot Score Calculator Version 1.4</h6>
+		<!---New in 1.4: Added an icon for the webpage, redesigned the look of the scorecard, added field validation in lieu of placeholders, added navbar and additional pages-->
 	</footer>
 </body>
 </html>

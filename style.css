@@ -1,18 +1,62 @@
+/*Stylesheet for Hand & Foot Scoresheet V1.4*/
 header {
-  background-color: #a4b8a2;
-  padding: 30px;
+  background-color: #282828;
+  padding-bottom: 20px;
   text-align: center;
   font-size: 35px;
-  color: black;
+  color: #ffffff;
   font-family: 'Arial', sans-serif;
 }
-header {
-  background-color: #fff
-  padding: 30px;
+.version{
+  width:80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:left;
+  padding:5px;
+  padding-bottom: 30px;
+}
+body {
+  margin: 0;
+  background-color: #282828;
+}
+.active{
+  background-color: #fff;
+  color:#282828;
+}
+h3{
+  color: #fff;
+  text-align: left;
+  font-size: 45px;
+  margin-bottom: -5px;
+}
+a{
+  text-decoration: inherit;
+  color: inherit;
+}
+li.navbar{
+  float:left;
+}
+li a{
+  padding:14px 16px;
+  display:block;
+  color: #fff;
   text-align: center;
-  font-size: 8px;
-  color: black;
-  font-family: 'Arial', sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+}
+li a:hover{
+  background-color: #000;
+}
+li a.active:hover{
+  background-color: #fff;
+  color:#282828;
+}
+ul.unavbar{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow:hidden;
+  background-color: #1c1c1c;
 }
 section.contain {
   display: -webkit-flex;
@@ -22,24 +66,107 @@ section.type-a {
   -webkit-flex: 2;
   -ms-flex: 2;
   flex: 2;
-  background-color: #f5b469;
+  background-color: #282828;
   padding: 20px;
+  align-items: center;
 }
 section.type-b {
   -webkit-flex: 2;
   -ms-flex: 2;
   flex: 2;
-  background-color: #62bbd1;
+  background-color: #282828;
   padding: 20px;
 }
-
+.scoreguide{
+  width:45%;
+  color:white;
+  border: 1px solid;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 20px;
+  padding:2px;
+}
+.scorehelp{
+  margin-left:10%;
+  margin-right:10%;
+}
 p {
   text-align: center;
   font-size: 20px;
-  color: black;
+  color: #ffffff;
   font-family: 'Arial', sans-serif;
 }
+footer{
+  background-color: #282828;
+  padding:0;
+  margin:0;
+}
+.tname1 {
+  font-size: 60px;
+  background-color: #282828;
+  font-family: 'Arial', sans-serif;
+  color: #66F2B1;
+  border: 0px;
+  width: 100%;
+}
 
+.tname2 {
+  font-size: 60px;
+  background-color: #282828;
+  font-family: 'Arial', sans-serif;
+  color: #66e0f2;
+  border: 0px;
+  width: 100%;
+}
+
+.ans1 {
+  font-size: 100px;
+  font-family: 'Arial', sans-serif;
+  color: #66F2B1;
+}
+
+.ans2 {
+  font-size: 100px;
+  font-family: 'Arial', sans-serif;
+  color: #66e0f2;
+}
+
+.resp1 {
+  color: #66F2B1;
+  font-size: 20px;
+}
+
+.resp1f {
+  color: #282828;
+  font-size: 20px;
+  background-color: #fff;
+  border-radius: 100px;
+  width: 50%;
+}
+
+.resp2 {
+  color: #66e0f2;
+  font-size: 20px;
+}
+
+.resp2f {
+  color: #282828;
+  font-size: 20px;
+  background-color: #fff;
+  border-radius: 100px;
+  width: 50%;
+}
+
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td{
+  padding: 2px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
 
 @media (max-width: 600px) {
   section.contain {
@@ -60,13 +187,26 @@ section.contain2 {
 }
 form {
   text-align: center;
+  align-items: center;
 }
 input {
   text-align: center;
 }
-input.type-d {
-  margin: auto;
-  width: 10%;
+input.type-dleft {
+  margin: 2px;
+  width: 12%;
+  font-size: 20px;
+  background-color: #66F2B1;
+  color:#282828;
+  border: 0px;
+}
+input.type-dright {
+  margin: 2px;
+  width: 12%;
+  font-size: 20px;
+  background-color: #66e0f2;
+  color:#282828;
+  border: 0px;
 }
 label {
   font-size: 20px;
@@ -79,18 +219,25 @@ label {
 h2 {
   text-align: center;
    font-size: 80px;
-  color: black;
+  color: #ffffff;
   font-family: 'Arial', sans-serif;
 }
 h6 {
   text-align: center;
    font-size: 10px;
-  color: black;
+  color: #fff;
   font-family: 'Arial', sans-serif;
 }
 h1 {
   text-align: center;
    font-size: 70px;
-  color: black;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+.txtright{
+  text-align: right;
+  float: right;
+}
+*{
   font-family: 'Arial', sans-serif;
 }
